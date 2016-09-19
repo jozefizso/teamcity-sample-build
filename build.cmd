@@ -6,6 +6,10 @@ echo   Project1 -^> Project1.dll
 echo Build complete.
 echo ##teamcity[blockClosed name='build']
 
+
+echo ##teamcity[blockOpened name='TestProject1' description='Run unit tests for Project 1']
+echo Executing TestProject1
+
 echo ##teamcity[blockOpened name='nunit3' description='Running tests']
 echo nunit3-console
 echo Testing Project1.Tests.dll
@@ -23,3 +27,6 @@ echo ##teamcity[testSuiteFinished name='Project1.Tests.dll' flowId='0-1124']
 
 echo Testing complete.
 echo ##teamcity[blockClosed name='nunit3']
+
+echo ##teamcity[blockClosed name='TestProject1']
+
