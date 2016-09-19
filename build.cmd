@@ -30,3 +30,15 @@ echo ##teamcity[blockClosed name='nunit3']
 
 echo ##teamcity[blockClosed name='TestProject1']
 
+
+echo ##teamcity[blockOpened name='PackageProject1' description='Package project as NuGet']
+echo Executing PackageProject1
+
+echo ##teamcity[blockOpened name='nuget' description='Create NuGet package']
+echo Creating NuGet package for Project1...
+echo Successfully created package 'Project-1.0.0.nupkg'.
+
+echo ##teamcity[publishArtifacts '%~dp0README.md']
+echo ##teamcity[blockClosed name='nuget']
+
+echo ##teamcity[blockClosed name='PackageProject1']
